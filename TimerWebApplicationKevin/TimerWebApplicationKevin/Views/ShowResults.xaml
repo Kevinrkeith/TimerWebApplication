@@ -43,7 +43,6 @@
             <Button Content ="Clear" Width="100" Height="30" Command="{Binding clearCommand}"/>
             <Button Content ="Submit" Width="100" Height="30" HorizontalAlignment="Right" Command="{Binding AddUserCommand}" Margin="0,12,40,8"/>
             <Button Content ="Back" Width="100" Height="30" HorizontalAlignment="Left" Grid.Row="0" Command="{Binding NavigateLoginCommand}" Margin="480,10,0,10"/>
-            <Button Content ="Stop All" Width="143" HorizontalAlignment="Left" Grid.Row="1" Command="{Binding StopAllCommand}" Margin="530,0,0,345"/>
         </Grid>
     </Grid>
 </UserControl>
