@@ -19,10 +19,10 @@ namespace TimerWebApplicationKevin.Model
         private DateTime StartTime { get; set; }
         public bool isStarted = false;
         public string startButton { get; set; }
-        public ICommand testCommand { get; set; }
+        public ICommand startCommand { get; set; }
         public Users()
         {
-            testCommand = new DelegateCommand(TestCommand);
+            startCommand = new DelegateCommand(StartCommand);
             startButton = "Start";
         }
         private void Form_Load()
@@ -41,7 +41,7 @@ namespace TimerWebApplicationKevin.Model
             OnPropertyChanged(nameof(endTime));
             OnPropertyChanged(nameof(totalTime));
         }
-        private void TestCommand()
+        private void StartCommand()
         {
             Console.WriteLine("Hello");
             isStarted = !isStarted;

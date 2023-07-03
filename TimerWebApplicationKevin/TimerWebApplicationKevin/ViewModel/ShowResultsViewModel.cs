@@ -25,13 +25,16 @@ namespace TimerWebApplicationKevin.ViewModel
         public ICommand AddUserCommand { get; set; }
         public ICommand ButtonCommand { get; set; }
         public ICommand testCommand { get; set; }
+        public ICommand clearCommand { get; set; }
         private ObservableCollection<TimerModelLogic> timeCollection;
         private ObservableCollection<Users> userCollection;
         private int _Id;
 
-        private void ButtonAction(int? index)
+        private void ClearCommand()
         {
-            MessageBox.Show($"{index}");
+            userCollection.Clear();
+            UserCollection.Clear();
+            OnPropertyChanged(nameof(UserCollection));
         }
         public ObservableCollection<Users> UserCollection
         {
@@ -67,6 +70,7 @@ namespace TimerWebApplicationKevin.ViewModel
             timeCollection = new ObservableCollection<TimerModelLogic>();
             userCollection = new ObservableCollection<Users>();
             AddUserCommand = new DelegateCommand(AddUser);
+            clearCommand = new DelegateCommand(ClearCommand);
             _Id = 0;
         }
 

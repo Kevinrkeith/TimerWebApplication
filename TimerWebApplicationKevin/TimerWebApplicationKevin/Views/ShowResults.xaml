@@ -22,7 +22,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Id}" Width="30" HorizontalAlignment="Left"/>
                                 <Button Content="{Binding startButton}" Width="60" Height="30"
-                            Command="{Binding testCommand}"
+                            Command="{Binding startCommand}"
                             CommandParameter="{Binding Id}" />
                                 <Button Content="Interval" Width="60" Height="30"
                             Command="{Binding RelativeSource={RelativeSource AncestorType=ListBox}, Path=DataContext.Interval}"
@@ -40,7 +40,7 @@
             </ListBox>
             <TextBlock Text="Name" Width="150" Height="30" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="20"/>
             <TextBox Text="{Binding currentName}" Width="150" Height="30" HorizontalAlignment="Left" Margin="172,10,0,10"/>
-
+            <Button Content ="Clear" Width="100" Height="30" Command="{Binding clearCommand}"/>
             <Button Content ="Submit" Width="100" Height="30" HorizontalAlignment="Right" Command="{Binding AddUserCommand}" Margin="0,12,40,8"/>
             <Button Content ="Back" Width="100" Height="30" HorizontalAlignment="Left" Grid.Row="0" Command="{Binding NavigateLoginCommand}" Margin="480,10,0,10"/>
         </Grid>
