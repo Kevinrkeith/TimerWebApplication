@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kevin\source\repos\TimerWebApplicationKevin\TimerWebApplicationKevin\obj\Debug\
+C:\Users\Kevin\source\repos\KevinWebApplication\KevinWebApplication\TimerWebApplication\TimerWebApplicationKevin\TimerWebApplicationKevin\obj\Debug\
 TimerWebApplicationKevin
 none
 false
 DEBUG;TRACE
-C:\Users\Kevin\source\repos\TimerWebApplicationKevin\TimerWebApplicationKevin\Views\App.xaml
+C:\Users\Kevin\source\repos\KevinWebApplication\KevinWebApplication\TimerWebApplication\TimerWebApplicationKevin\TimerWebApplicationKevin\Views\App.xaml
 4-1734501520
 
-21412700371
+20-1509077750
 13-38814620
 Views\MainWindow.xaml;Views\LoginView.xaml;Views\ShowResults.xaml;Views\TimerView.xaml;
 
-True
+False
 

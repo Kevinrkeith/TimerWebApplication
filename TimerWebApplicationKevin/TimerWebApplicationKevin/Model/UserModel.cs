@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 using System.Windows.Input;
 using TimerWebApplicationKevin.Misc;
 
@@ -7,11 +8,7 @@ namespace TimerWebApplicationKevin.Model
     public class UserModel { }
     public class Users : BaseViewModel
     {
-        public Users()
-        {
-            testCommand = new DelegateCommand(TestCommand);
-            startButton = "Start";
-        }
+        Timer myTimer = new Timer(1);
         public int Id { get; set; }
         public string _currentName { get; set; }
         public string startTime { get; set; }
@@ -23,7 +20,27 @@ namespace TimerWebApplicationKevin.Model
         public bool isStarted = false;
         public string startButton { get; set; }
         public ICommand testCommand { get; set; }
+        public Users()
+        {
+            testCommand = new DelegateCommand(TestCommand);
+            startButton = "Start";
+        }
+        private void Form_Load()
+        {
+            myTimer.Elapsed += UpdateEndTime;
+            myTimer.Start();
+            myTimer.Enabled = isStarted;
+        }
+        private void UpdateEndTime(Object source, ElapsedEventArgs e)
+        {
+            EndTime = DateTime.Now;
+            TotalTime = EndTime.Subtract(StartTime);
 
+            endTime = EndTime.ToString("HH:mm:ss:fff");
+            totalTime = TotalTime.ToString();
+            OnPropertyChanged(nameof(endTime));
+            OnPropertyChanged(nameof(totalTime));
+        }
         private void TestCommand()
         {
             Console.WriteLine("Hello");
@@ -43,6 +60,7 @@ namespace TimerWebApplicationKevin.Model
                 endTime = EndTime.ToString("HH:mm:ss:fff");
                 totalTime = TotalTime.ToString();
             }
+            Form_Load();
             OnPropertyChanged(nameof(startButton));
             OnPropertyChanged(nameof(endTime));
             OnPropertyChanged(nameof(startTime));
