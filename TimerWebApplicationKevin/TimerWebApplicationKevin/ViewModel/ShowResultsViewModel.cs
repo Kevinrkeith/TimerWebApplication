@@ -26,10 +26,20 @@ namespace TimerWebApplicationKevin.ViewModel
         public ICommand ButtonCommand { get; set; }
         public ICommand testCommand { get; set; }
         public ICommand clearCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
+        public ICommand LoadCommand { get; set; }
+        public ICommand StopAllCommand { get; set; }
         private ObservableCollection<TimerModelLogic> timeCollection;
         private ObservableCollection<Users> userCollection;
         private int _Id;
-
+        private void StopAll()
+        {
+            for (int i=0; i<userCollection.Count; i++)
+            {
+                if (userCollection[i].isStarted)
+                    userCollection[i].StopCommand();
+            }
+        }
         private void ClearCommand()
         {
             userCollection.Clear();
@@ -71,6 +81,7 @@ namespace TimerWebApplicationKevin.ViewModel
             userCollection = new ObservableCollection<Users>();
             AddUserCommand = new DelegateCommand(AddUser);
             clearCommand = new DelegateCommand(ClearCommand);
+            StopAllCommand = new DelegateCommand(StopAll);
             _Id = 0;
         }
 

@@ -25,6 +25,10 @@ namespace TimerWebApplicationKevin.Model
             startCommand = new DelegateCommand(StartCommand);
             startButton = "Start";
         }
+        public void StopCommand()
+        {
+            StartCommand();
+        }
         private void Form_Load()
         {
             myTimer.Elapsed += UpdateEndTime;
