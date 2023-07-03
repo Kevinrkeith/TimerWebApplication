@@ -13,7 +13,7 @@
                 <RowDefinition Height="700*"/>
             </Grid.RowDefinitions>
 
-            <ListBox ItemsSource="{Binding Path = UserCollection}" Grid.Row="1" Width="700" Margin="40,30,40,20">
+            <ListBox ItemsSource="{Binding Path = UserCollection}" Grid.Row="1" Margin="10,30,10,10">
                 <!-- Define the item template for each item in the collection -->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
